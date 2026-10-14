@@ -1,0 +1,41 @@
+# Allow-list: ignore everything, then let in only this project's own work.
+# Nothing from the original game (APK, extracted files, assets, native libraries),
+# no built APKs, no signing keys and no decompiled or disassembled game code may be committed.
+*
+!*/
+
+!.gitignore
+!README.md
+
+!native/CMakeLists.txt
+!native/compat/*.h
+!native/compat/*.cpp
+!native/harness/*.h
+!native/harness/*.cpp
+!native/harness/java/**/*.java
+!native/arm32_shim/*.cpp
+
+!scripts/*.py
+!scripts/*.sh
+!scripts/ghidra/*.java
+
+!reports/*.md
+!tests/zipindex/check.cpp
+
+# Hard exclusions (re-ignored even if a pattern above would allow something inside them)
+game_data/
+original/
+assets/
+analysis/
+build/
+dist/
+android/signing/
+native/third_party/
+reports/paid-content/
+tests/device-s23/
+*.apk
+*.so
+*.dex
+*.jks
+*.keystore
+keystore.properties
